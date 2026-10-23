@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nirbhay Knowledge Hub - Workplace Safety</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <style>
+        /* Base Reset & Variables */
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #3b82f6;
+            --accent-orange: #f97316;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-light: #f3f4f6;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--accent-orange);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-orange);
+        }
+
+        /* Welcome / Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(30,58,138,0.95) 0%, rgba(59,130,246,0.9) 100%), url('https://unsplash.com') no-repeat center center/cover;
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: var(--white);
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            background-color: #ea580c;
+        }
+
+        /* Container Section */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-orange);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Safety Knowledge Grid */
+        .knowledge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .knowledge-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--secondary-blue);
+        }
+
+        .knowledge-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .knowledge-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-blue);
+        }
+
+        .knowledge-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Learning Resources Section */
+        .resources-section {
+            background-color: var(--white);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .resource-item {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .resource-item i {
+            font-size: 2rem;
+            color: var(--accent-orange);
+        }
+
+        .resource-info h4 {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .resource-info a {
+            color: var(--secondary-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .resource-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: #9ca3af;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        footer p {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .container {
+                padding: 2.5rem 1.2rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-shield-halved"></i> Nirbhay Knowledge Hub
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#welcome">Home</a></li>
+                    <li><a href="#safety-knowledge">Safety Knowledge</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Welcome / Hero Section -->
+    <section id="welcome" class="hero">
+        <div class="hero-content">
+            <h1>Safe Workplace, Secure Future</h1>
+            <p>Welcome to Nirbhay Knowledge Hub. Our mission is to foster a robust safety culture across industries and organizations, delivering essential knowledge to achieve an accident-free working environment.</p>
+            <a href="#safety-knowledge" class="btn">Explore Now</a>
+        </div>
+    </section>
+
+    <!-- Safety Knowledge Section -->
+    <section id="safety-knowledge" class="container">
+        <h2 class="section-title">Safety Knowledge</h2>
+        <div class="knowledge-grid">
+            
+            <!-- HIRA -->
+            <div class="knowledge-card">
+                <div class="card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <h3>HIRA</h3>
+                <p><strong>Hazard Identification & Risk Assessment:</strong> A proactive methodology to identify workplace hazards, evaluate associated risks, and implement robust controls to eliminate incidents before they occur.</p>
+            </div>
+
+            <!-- PTW -->
+            <div class="knowledge-card">
+                <div class="card-icon"><i class="fa-solid fa-file-signature"></i></div>
+                <h3>PTW</h3>
+                <p><strong>Permit to Work:</strong> A formal, documented safety system designed to safeguard high-risk operations (such as confined space entry or hot work) under strictly authorized conditions.</p>
+            </div>
+
+            <!-- Risk Assessment -->
+            <div class="knowledge-card">
+                <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>Risk Assessment</h3>
+                <p>A systematic process of evaluating risks arising from hazards, analyzing existing control measures, and prioritizing actions to reduce vulnerability to acceptable levels.</p>
+            </div>
+
+            <!-- Fire Safety -->
+            <div class="knowledge-card">
+                <div class="card-icon"><i class="fa-solid fa-fire-extinguisher"></i></div>
